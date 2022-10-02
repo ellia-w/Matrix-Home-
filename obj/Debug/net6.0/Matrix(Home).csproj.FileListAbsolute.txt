@@ -1,0 +1,15 @@
+F:\CSharp\Matrix(Home)\bin\Debug\net6.0\Matrix(Home).exe
+F:\CSharp\Matrix(Home)\bin\Debug\net6.0\Matrix(Home).deps.json
+F:\CSharp\Matrix(Home)\bin\Debug\net6.0\Matrix(Home).runtimeconfig.json
+F:\CSharp\Matrix(Home)\bin\Debug\net6.0\Matrix(Home).dll
+F:\CSharp\Matrix(Home)\bin\Debug\net6.0\Matrix(Home).pdb
+F:\CSharp\Matrix(Home)\obj\Debug\net6.0\Matrix(Home).csproj.AssemblyReference.cache
+F:\CSharp\Matrix(Home)\obj\Debug\net6.0\Matrix(Home).GeneratedMSBuildEditorConfig.editorconfig
+F:\CSharp\Matrix(Home)\obj\Debug\net6.0\Matrix(Home).AssemblyInfoInputs.cache
+F:\CSharp\Matrix(Home)\obj\Debug\net6.0\Matrix(Home).AssemblyInfo.cs
+F:\CSharp\Matrix(Home)\obj\Debug\net6.0\Matrix(Home).csproj.CoreCompileInputs.cache
+F:\CSharp\Matrix(Home)\obj\Debug\net6.0\Matrix(Home).dll
+F:\CSharp\Matrix(Home)\obj\Debug\net6.0\refint\Matrix(Home).dll
+F:\CSharp\Matrix(Home)\obj\Debug\net6.0\Matrix(Home).pdb
+F:\CSharp\Matrix(Home)\obj\Debug\net6.0\Matrix(Home).genruntimeconfig.cache
+F:\CSharp\Matrix(Home)\obj\Debug\net6.0\ref\Matrix(Home).dll
