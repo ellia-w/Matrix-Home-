@@ -7,18 +7,16 @@ class Matrix
     public int rows;
     public int cols;
 
-    public void Read()
-    {
-        //Console.WriteLine("Type an range of your matrix here: " );
-        var range = (Console.ReadLine().Split(" ")); //     2 3
+    public void Read()// creating an objoct of Matrix
+    {        
+        var range = (Console.ReadLine().Split(" ")); 
         rows = int.Parse(range[0]);
         cols = int.Parse(range[1]);
         string[] inputRow = new string[cols];
         data = new double[rows, cols];
 
         for (int i = 0; i < rows; i++)
-        {
-            //Console.Write("Type the first row of your matrix here: ");
+        {            
             inputRow = Console.ReadLine().Split(" ");
             for (int j = 0; j < cols; j++)
             {
@@ -27,12 +25,12 @@ class Matrix
         }
     }
 
-    public void Write()
+    public void Write()//   Displaying matrix in console
     {
         int count = 0;
+
         foreach (var item in data)
-        {
-            //Console.Write($"{item} ");
+        {            
             count++;
             if (count % cols == 0)
             {
@@ -41,68 +39,64 @@ class Matrix
             else
             {
                 Console.Write($"{item} ");
-            }
-            //1 2 3
+            }            
         }
     }
-    public Matrix Multiply()
+    public Matrix Multiply()// multiplying A matrix by a double from this method
     {
         double n = double.Parse(Console.ReadLine());
-
-        var C = new Matrix();
-        C.data = new double[rows, cols];
-        C.rows = rows;
-        C.cols = cols;
+        var tempMatrix = new Matrix();
+        tempMatrix.data = new double[rows, cols];
+        tempMatrix.rows = rows;
+        tempMatrix.cols = cols;
 
         for (int i = 0; i < rows; i++)
         {
             for (int j = 0; j < cols; j++)
             {
-                C.data[i, j] = data[i, j] * n;
+                tempMatrix.data[i, j] = data[i, j] * n;
             }
         }
-        return C;
+        return tempMatrix;
     }
-    public Matrix Multiply(double n)
+    public Matrix Multiply(double n)// multiplying A matrix by a double translated through this method
     {       
-
-        var C = new Matrix();
-        C.data = new double[rows , cols];
-        C.rows = rows;
-        C.cols = cols;
-
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                C.data[i, j] = data[i, j] * n;
-            }
-        }
-        return C;
-    }
-    public Matrix Sum(Matrix secondMatrix)
-    {
-        var C = new Matrix();
-        C.data = new double[rows, cols];
-        C.rows = rows;
-        C.cols = cols;
+        var tempMatrix = new Matrix();
+        tempMatrix.data = new double[rows , cols];
+        tempMatrix.rows = rows;
+        tempMatrix.cols = cols;
 
         for (int i = 0; i < rows; i++)
         {
             for (int j = 0; j < cols; j++)
             {
-                C.data[i, j] = data[i, j] + secondMatrix.data[i, j];              //secondMatrix[i, j];
+                tempMatrix.data[i, j] = data[i, j] * n;
             }
         }
-        return C;
-        //var C = new double[rows, cols];
+        return tempMatrix;
     }
-    public Matrix matrixMult(Matrix secondMatrix)
+    public Matrix Sum(Matrix secondMatrix)// sum called matrix with matrix translated through this method
     {
-        Matrix C = new Matrix(); //[rows,secondMatrix.cols];
-        C.data = new double[rows, rows];
-        C.rows = rows;
-        C.cols = rows;
+        var tempMatrix = new Matrix();
+        tempMatrix.data = new double[rows, cols];
+        tempMatrix.rows = rows;
+        tempMatrix.cols = cols;
+
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                tempMatrix.data[i, j] = data[i, j] + secondMatrix.data[i, j];              
+            }
+        }
+        return tempMatrix;        
+    }
+    public Matrix matrixMult(Matrix secondMatrix)// mulriply used matrix by translated matrix through this method
+    {
+        Matrix tempMatrix = new Matrix(); 
+        tempMatrix.data = new double[rows, rows];
+        tempMatrix.rows = rows;
+        tempMatrix.cols = rows;
 
         for (int k = 0; k < rows; k++)
         {
@@ -111,28 +105,28 @@ class Matrix
                 for (int i = 0; i < cols; i++)
                 {                    
 
-                    C.data[k , l] += data[k , i] * secondMatrix.data[i , l]; 
+                    tempMatrix.data[k , l] += data[k , i] * secondMatrix.data[i , l]; 
                     
                 }
                 
             }
         }
-        return C;
+        return tempMatrix;
     }
-    public Matrix Transponate()
+    public Matrix Transponate()// tranponating used matrix
     {
-        var C = new Matrix();
-        C.data = new double[cols, rows];
-        C.rows = cols;
-        C.cols = rows;
+        var tempMatrix = new Matrix();
+        tempMatrix.data = new double[cols, rows];
+        tempMatrix.rows = cols;
+        tempMatrix.cols = rows;
         for (int i = 0; i < rows; i++)
         {
             for (int j = 0; j < cols; j++)
             {
-                C.data[j , i] = data[i, j];
+                tempMatrix.data[j , i] = data[i, j];
             }
         }
-        return C;
+        return tempMatrix;
     }
 }
 public class MainClass
