@@ -1,7 +1,7 @@
-﻿using System;
-using System.Xml.Linq;
+﻿//using System;
+//using System.Xml.Linq;
 
-/*class Matrix
+class Matrix
 {
     public double[,] data;
     public int rows;
@@ -9,15 +9,15 @@ using System.Xml.Linq;
 
     // creating an objoct of Matrix
     public void Read()
-    {        
-        var range = (Console.ReadLine().Split(" ")); 
+    {
+        var range = (Console.ReadLine().Split(" "));
         rows = int.Parse(range[0]);
         cols = int.Parse(range[1]);
         string[] inputRow = new string[cols];
         data = new double[rows, cols];
 
         for (int i = 0; i < rows; i++)
-        {            
+        {
             inputRow = Console.ReadLine().Split(" ");
             for (int j = 0; j < cols; j++)
             {
@@ -31,7 +31,7 @@ using System.Xml.Linq;
         int count = 0;
 
         foreach (var item in data)
-        {            
+        {
             count++;
             if (count % cols == 0)
             {
@@ -40,7 +40,7 @@ using System.Xml.Linq;
             else
             {
                 Console.Write($"{item} ");
-            }            
+            }
         }
     }
     // multiplying A matrix by a double from this method
@@ -63,9 +63,9 @@ using System.Xml.Linq;
     }
     // multiplying A matrix by a double translated through this method
     public Matrix Multiply(double n)
-    {       
+    {
         var tempMatrix = new Matrix();
-        tempMatrix.data = new double[rows , cols];
+        tempMatrix.data = new double[rows, cols];
         tempMatrix.rows = rows;
         tempMatrix.cols = cols;
 
@@ -90,15 +90,15 @@ using System.Xml.Linq;
         {
             for (int j = 0; j < cols; j++)
             {
-                tempMatrix.data[i, j] = data[i, j] + secondMatrix.data[i, j];              
+                tempMatrix.data[i, j] = data[i, j] + secondMatrix.data[i, j];
             }
         }
-        return tempMatrix;        
+        return tempMatrix;
     }
     // multiply used matrix by translated matrix through this method
     public Matrix matrixMult(Matrix secondMatrix)
     {
-        Matrix tempMatrix = new Matrix(); 
+        Matrix tempMatrix = new Matrix();
         tempMatrix.data = new double[rows, rows];
         tempMatrix.rows = rows;
         tempMatrix.cols = rows;
@@ -108,12 +108,12 @@ using System.Xml.Linq;
             for (int l = 0; l < secondMatrix.cols; l++)
             {
                 for (int i = 0; i < cols; i++)
-                {                    
+                {
 
-                    tempMatrix.data[k , l] += data[k , i] * secondMatrix.data[i , l]; 
-                    
+                    tempMatrix.data[k, l] += data[k, i] * secondMatrix.data[i, l];
+
                 }
-                
+
             }
         }
         return tempMatrix;
@@ -129,32 +129,9 @@ using System.Xml.Linq;
         {
             for (int j = 0; j < cols; j++)
             {
-                tempMatrix.data[j , i] = data[i, j];
+                tempMatrix.data[j, i] = data[i, j];
             }
         }
         return tempMatrix;
-    }
-}
-*/
-
-public class MainClass
-{
-    public static void Main()
-    {
-        //      (5 * A + 2 * B) * A 
-        Console.WriteLine("input A");
-        var A = new Matrix();
-        A.Read();
-
-        //Console.WriteLine("input B");
-        //var B = new Matrix();
-        //B.Read();
-
-        //A.Sum(B);
-        //A.matrixMult(B).Write();
-
-        //(A.Multiply(5).Sum(B.Multiply(2)).matrixMult(A)).Write();
-        A.Transponate().Write();
-
     }
 }
